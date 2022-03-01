@@ -7,16 +7,16 @@ These are the steps to arrive at the working example included in chapter-001
 
 # Steps
 1. Head to https://start.spring.io/ and make the following selections
-Project Type: Maven
-Language: Java
-Spring Boot: 2.7.0 (M2)
-Group: com.example
-Artifact: hello
-Name: hello
-Package name: com.example.hello
-Packaging: war
-Java: 11
-Dependencies: Spring Web
+> Project Type: Maven
+> Language: Java
+> Spring Boot: 2.7.0 (M2)
+> Group: com.example
+> Artifact: hello
+> Name: hello
+> Package name: com.example.hello
+> Packaging: war
+> Java: 11
+> Dependencies: Spring Web
 
 2. Click on generate and save the file locally (will be named hello.zip)
 
