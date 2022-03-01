@@ -99,7 +99,8 @@ Then add the following entries to application.properties
 This time Chrome will warn you that it cannot verify the validity of the certificate but it will offer you the Advanced button from where you can click on “Proceed to www.example.com”
 
 Both of:
-https://www.example.com:8080/greeting
-https://www.example.com:8080/greeting?name=Joe
+
+        https://www.example.com:8080/greeting
+        https://www.example.com:8080/greeting?name=Joe
 
 Should now work.
