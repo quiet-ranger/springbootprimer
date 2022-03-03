@@ -1,10 +1,13 @@
 {
 	"folders": [
 		{
-			"path": "./hello"
+			"path": "./chapter-001"
 		},
 		{
-			"path": "./next"
+			"path": "./chapter-002"
+		},
+		{
+			"path": "./chapter-003"
 		}
 	],
 	"settings": {}

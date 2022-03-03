@@ -33,13 +33,11 @@ These are the steps to arrive at the working example included in chapter-001
    1. A resource representation class, a regular POJO, under com.example.hello.controolers.Greeting.java
    2. A controller com.example.hello.controllers.GreetingController.java
 
-Contrary to what is instructed here https://spring.io/guides/gs/rest-service/, it is important that these two
-new classes are created on the directory where the main SpringBootApplication, HelloApplication, exists or a 
-subdirectory of it.  If you don't do this, at runtime the controller cannot be found.
+Contrary to what is instructed here https://spring.io/guides/gs/rest-service/, it is important that these two new classes are created on the directory where the main SpringBootApplication, HelloApplication, exists or a subdirectory of it.  If you don't do this, at runtime the controller cannot be found.
 
-Greeting.java will be automatically converted to JSON on the response by the Jackson JSON library.
++ Greeting.java will be automatically converted to JSON on the response by the Jackson JSON library.
 
-GreetingController.java is the resource controller, the component that will
++ GreetingController.java is the resource controller, the component that will
 actually receive the requests because it is marked with the annocation @RestController.  Its greeting method both contains a path mapping and the specification for an optional query parameter with a default value.
 
 6. Open a terminal and run:
