@@ -37,7 +37,7 @@ In order to chech the versions of the various components being pulled by Maven i
 
 6. Create the following additional classes which are not generated:
 
-+ Same as created for chapter-002
++ Same as created for chapter-002, except for `LoadDatabase` as the functionality was moved inside `PayrollApplication` to demonstrate that this is also possible/acceptable
 + __EmployeeModelAssembler__ has a convenience method to generate HATEOAS links
 
 Notice that the biggest change actually happens in __EmployeeController__ as no longer return the original entities but various wrappers from the HATEOAS package.
