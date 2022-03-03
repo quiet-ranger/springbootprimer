@@ -1,4 +1,4 @@
-package com.example.next.payroll;
+package com.example.payroll;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;

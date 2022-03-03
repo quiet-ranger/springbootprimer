@@ -1,4 +1,4 @@
-package com.example.next.payroll;
+package com.example.payroll;
 
 import java.util.List;
 
