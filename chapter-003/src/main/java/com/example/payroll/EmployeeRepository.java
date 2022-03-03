@@ -1,4 +1,4 @@
-package com.example.next.payroll;
+package com.example.payroll;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

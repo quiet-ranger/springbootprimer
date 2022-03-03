@@ -1,4 +1,4 @@
-package com.example.next.payroll;
+package com.example.payroll;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
