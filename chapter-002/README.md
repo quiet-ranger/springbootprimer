@@ -8,6 +8,17 @@ In a nutshell, we implement a minimal set of RESTful services (without HATEOAS) 
 2. Maven 3.2+
 3. Visual Studio Code (or equivalent IDE)
 4. Step 9 from chapter 001 was followed to generate and install server.p12
+5. The following versions of Spring and H2:
+
+        com.h2database:h2:jar:2.1.210
+        org.springframework:spring-core:jar:5.3.16
+        org.springframework:spring-test:jar:5.3.16
+        org.springframework.data:spring-data-jpa:jar:2.7.0-M3
+        org.springframework.boot:spring-boot-starter-data-jpa:jar:2.7.0-M2
+        org.springframework.boot:spring-boot-starter-web:jar:2.7.0-M2
+        org.springframework.boot:spring-boot-starter-test:jar:2.7.0-M2
+
+Beware that there have been many changes to the API and, in fact, the main reason I decided to put together this tutorial was because the original did not mention versions and nothing worked.  I made all necessary adjustments to make everything work with the specific versions I list above.  They may or may not work with different versions.
 
 # Steps
 1. Head to https://start.spring.io/ and make the following selections:
