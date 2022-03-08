@@ -28,8 +28,8 @@ Beware that there have been many changes to the API and, in fact, the main reaso
         Spring Boot: 2.7.0 (M2)
         Group: com.example
         Artifact: chapter-002
-        Name: chapter-002
-        Package name: com.example.hello
+        Name: payroll
+        Package name: com.example.payroll
         Packaging: war
         Java: 11
         Dependencies: Spring Web, Spring Data JPA, H2 Database

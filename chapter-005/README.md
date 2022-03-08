@@ -82,4 +82,5 @@ Finally, try something outrageous:
 
         PUBLISH chat "I don't know what JSON is"
 
-This time around, on the console you can see the same raw message but trying to parse this into an entity fails and you see the error reported on the console        
+This time around, on the console you can see the same raw message but trying to parse this into an entity fails and you see the error reported on the console
+        
