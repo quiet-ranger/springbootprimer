@@ -1,9 +1,16 @@
-These are the steps to arrive at the working example included in chapter-001
+# Chapter 1
+The most basic SpringBoot RESTful app with a single GET entry point capable 
+of accepting a URL query parameter that completed the universal greeting message
+"Hello World".
+
+This is based on [this tutorial](https://spring.io/guides/gs/rest-service/) which
+was adapted to SpringBoot 2.7 and corrected where needed.
+ 
 
 # Prerequisites:
 1. JDK 11 or later
 2. Maven 3.2+
-3. Visual Studio Code (or equivalent IDE)
+3. Your favourite IDE
 
 # Steps
 1. Head to https://start.spring.io/ and make the following selections:
@@ -15,7 +22,7 @@ These are the steps to arrive at the working example included in chapter-001
         Artifact: hello
         Name: hello
         Package name: com.example.hello
-        Packaging: war
+        Packaging: jar
         Java: 11
         Dependencies: Spring Web
 
@@ -23,22 +30,22 @@ These are the steps to arrive at the working example included in chapter-001
 
 3. Unzip to your project directory, say ~/springbootprimer
 
-4. Enter IDE 
-
-        $ cd ~/springbootprimer/hello
-        $ code .
+4. Enter IDE (here we use Eclipse Spring Tool Suite 4).  Use File / Import option
 
 5. Create the following additional classes which are not generated:
 
-   1. A resource representation class, a regular POJO, under com.example.hello.controolers.Greeting.java
-   2. A controller com.example.hello.controllers.GreetingController.java
+   1. __Greeting__ A resource representation class (a regular POJO) to hold the message
+   2. __GreetingController__ The entry point that handles HTTP requests and responses
 
-Contrary to what is instructed here https://spring.io/guides/gs/rest-service/, it is important that these two new classes are created on the directory where the main SpringBootApplication, HelloApplication, exists or a subdirectory of it.  If you don't do this, at runtime the controller cannot be found.
+Contrary to what is instructed [here](https://spring.io/guides/gs/rest-service/), it is important that these two new classes 
+are created on the directory where the main SpringBootApplication, HelloApplication, exists or a sub-directory of it.  If 
+you don't do this, at runtime the controller cannot be found.
 
 + Greeting.java will be automatically converted to JSON on the response by the Jackson JSON library.
 
-+ GreetingController.java is the resource controller, the component that will
-actually receive the requests because it is marked with the annocation @RestController.  Its greeting method both contains a path mapping and the specification for an optional query parameter with a default value.
++ GreetingController.java is the resource controller, the component that will actually receive the requests because it is 
+marked with the annotation @RestController.  Its greeting method both contains a path mapping and the specification for an 
+optional query parameter with a default value.
 
 6. Open a terminal and run:
 
