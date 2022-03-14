@@ -1,23 +1,32 @@
+# Chapter 5
+
 Inspired and adapted from [this tutorial](https://spring.io/guides/gs/messaging-redis/) as it was published in March 2022.
 
 Asynchronous communication is a common pattern used to deal with consumers that are
 or can be slower than the producers.  There are plenty of so called message oriented
-middleware, MOM, to facilitate some implementations.  Redis, at first, does not appear to be an obvious choice as it was originally designed as an memory cache. However, it does include a pub/sub capability and this example demonstrates it.
+middleware, MOM, to facilitate implementations.  Redis, at first, does not appear to 
+be an obvious choice as it was originally designed as an memory cache. However, it 
+does include a pub/sub capability and this example demonstrates it.
 
-Another common pattern used in modern systems is to use JSON to represent entities.  We take the opportunity here to demonstrate how to use the jackson library to convert from objects to JSON and back, optionally using the pretty printing functionatily to make JSON more readable.
+Another common pattern used in modern systems is to use JSON to represent entities.  
+We take the opportunity here to demonstrate how to use the jackson library to convert 
+from objects to JSON and back, optionally using the pretty printing functionatily to 
+make JSON more readable on the console
 
 # Prerequisites:
 1. JDK 11 or later
 2. Maven 3.2+
 3. Redis 5.5.0 (which includes redis-cli 5.0.7)
-4. Visual Studio Code (or equivalent IDE)
+4. Your favourite IDE
 5. The following versions of top level components
 
         org.springframework.boot:spring-boot-starter-data-redis:jar:2.7.0-M2
         org.springframework.boot:spring-boot-starter-test:jar:2.7.0-M2
         com.fasterxml.jackson.core:jackson-databind:jar:2.13.1
 
-Beware that there have been many changes to the APIs and, in fact, the main reason I decided to put together this tutorial was because the original did not mention versions and nothing worked.  I made all necessary adjustments to make everything work with the specific versions I list above.  They may or may not work with different versions.
+Beware that there have been many changes to the APIs and, in fact, the main reason I decided to put together this 
+tutorial was because the original did not mention versions and nothing worked.  I made all necessary adjustments 
+to make everything work with the specific versions I list above.  They may or may not work with different versions.
 
 If at any point you need to know which versions of each component are used by the Maven build type the following:
 
@@ -34,7 +43,7 @@ If at any point you need to know which versions of each component are used by th
         Artifact: chapter-005
         Name: redis
         Package name: com.example.chapter-005
-        Packaging: war
+        Packaging: jar
         Java: 11
         Dependencies: Spring Data Redis
 
