@@ -1,9 +1,14 @@
-These are the steps to arrive at the working example included in chapter-003. It is a subset adaptation of [this tutorial](https://spring.io/guides/tutorials/rest/) as available on March 2022.
+# Chapter 3
 
-In a nutshell, we enhance/modify what was done in chapter-002 in order to implement HATEOAS and therefore enable [HAL based clients] /https://stateless.group/hal_specification.html).  According to Roy Fielding, this is a mandatory step in order for your service to be considered RESTful although I really wonder how many people actually agree with this strict definition.
+This is a subset adaptation of [this tutorial](https://spring.io/guides/tutorials/rest/) as available on March 2022.
+
+In a nutshell, we enhance/modify what was done in Chapter 2 in order to implement HATEOAS and therefore enable 
+[HAL based clients] /https://stateless.group/hal_specification.html).  According to Roy Fielding, this is a mandatory 
+step in order for your service to be considered RESTful although I really wonder how many people actually agree with 
+this strict definition.
 
 # Prerequisites:
-1. Same as for chapter-002
+1. Same as for Chapter 2
 2. HATEOAS version 1.5.0-M2
 
 In order to chech the versions of the various components being pulled by Maven if a specific one is not given you can use the following command:
@@ -22,7 +27,7 @@ In order to chech the versions of the various components being pulled by Maven i
         Artifact: chapter-003
         Name: chapter-003
         Package name: com.example.hello
-        Packaging: war
+        Packaging: jar
         Java: 11
         Dependencies: Spring Web, Spring Data JPA, H2 Database, HATEOAS
 
@@ -30,17 +35,16 @@ In order to chech the versions of the various components being pulled by Maven i
 
 3. Unzip to your project directory, say ~/springbootprimer
 
-4. Enter Visual Studio Code
-
-        $ cd ~/springbootprimer
-        $ code .
+4. Enter your favourite IDE and import the project
 
 6. Create the following additional classes which are not generated:
 
-+ Same as created for chapter-002, except for `LoadDatabase` as the functionality was moved inside `PayrollApplication` to demonstrate that this is also possible/acceptable
++ Same as created for chapter-002, except for `LoadDatabase` as the functionality was moved inside `PayrollApplication` to 
+demonstrate that this is also possible/acceptable
 + __EmployeeModelAssembler__ has a convenience method to generate HATEOAS links
 
-Notice that the biggest change actually happens in __EmployeeController__ as no longer return the original entities but various wrappers from the HATEOAS package.
+Notice that the biggest change actually happens in __EmployeeController__ as no longer return the original entities but 
+various wrappers from the HATEOAS package.
 
 
 7. Open a terminal and run:
