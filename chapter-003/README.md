@@ -52,7 +52,9 @@ various wrappers from the HATEOAS package.
         ./mvnw clean package
         ./mvnw spring-boot:run
 
-8. Once the server is ready (you should see "Completed Initialization" on the console) you can try accessing from a browser:
+8. Once the server is ready (you should see "Completed Initialization" on the console) you can try accessing from curl or a browser:
+
+$ curl --insecure https://www.example.com:8080/employees | jq .
 
 https://www.example.com:8080/employees
 
