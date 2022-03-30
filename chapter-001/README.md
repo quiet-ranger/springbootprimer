@@ -1,6 +1,6 @@
 # Chapter 1
 The most basic SpringBoot RESTful app with a single GET entry point capable 
-of accepting a URL query parameter that completed the universal greeting message
+of accepting a URL query parameter that completes the universal greeting message
 "Hello World".
 
 This is based on [this tutorial](https://spring.io/guides/gs/rest-service/) which
@@ -13,46 +13,47 @@ was adapted to SpringBoot 2.7 and corrected where needed.
 3. Your favourite IDE
 
 # Steps
-1. Head to https://start.spring.io/ and make the following selections:
+1) Head to https://start.spring.io/ and make the following selections:
 
         Project Type: Maven
         Language: Java
         Spring Boot: 2.7.0 (M2)
         Group: com.example
-        Artifact: hello
+        Artifact: chapter-001
         Name: hello
         Package name: com.example.hello
         Packaging: jar
         Java: 11
         Dependencies: Spring Web
 
-2. Click on generate and save the file locally (will be named hello.zip)
+2) Click on generate and save the file locally (will be named chapter-001.zip)
 
-3. Unzip to your project directory, say ~/springbootprimer
+3) Unzip to your project directory, say ~/springbootprimer
 
-4. Enter IDE (here we use Eclipse Spring Tool Suite 4).  Use File / Import option
+4) Enter IDE (here we use Eclipse Spring Tool Suite 4).  Use File / Import option
 
-5. Create the following additional classes which are not generated:
+5) Create the following additional classes which are not generated:
 
-   1. __Greeting__ A resource representation class (a regular POJO) to hold the message
-   2. __GreetingController__ The entry point that handles HTTP requests and responses
+	- __Greeting__ - A resource representation class (a regular POJO) to hold the message  
+	- __GreetingController__ - The entry point that handles HTTP requests and responses
 
 Contrary to what is instructed [here](https://spring.io/guides/gs/rest-service/), it is important that these two new classes 
 are created on the directory where the main SpringBootApplication, HelloApplication, exists or a sub-directory of it.  If 
 you don't do this, at runtime the controller cannot be found.
 
-+ Greeting.java will be automatically converted to JSON on the response by the Jackson JSON library.
+Greeting.java will be automatically converted to JSON on the response by the Jackson JSON library.
 
-+ GreetingController.java is the resource controller, the component that will actually receive the requests because it is 
+GreetingController.java is the resource controller, the component that will actually receive the requests because it is 
 marked with the annotation @RestController.  Its greeting method both contains a path mapping and the specification for an 
-optional query parameter with a default value.
+optional query parameter with a default value.  
 
-6. Open a terminal and run:
+
+6) Open a terminal and run:
 
         ./mvnw clean package
         ./mvnw spring-boot:run
 
-7. Once the server is ready (you should see "Completed Initialization" on the console) you can try accessing from a browser:
+7) Once the server is ready (you should see "Completed Initialization" on the console) you can try accessing from a browser:
 
 https://www.example.com:8080/greeting
 
@@ -61,15 +62,14 @@ If you are running Google Chrome Version 98.0.4758.102 (Official Build) (64-bit)
     1. The DNS cannot resolve www.example.com to your localhost
     2. The server does not contain a valid SSL certificate
 
-8. To fix the first of the two problems, add the following to /etc/hosts
+8) To fix the first of the two problems, add the following to /etc/hosts
 
         127.0.0.1       www.example.com
 
-9. To fix the second problem you must create a self certificate
+9) To fix the second problem you must create a self certificate
 
         $ cd ~/springbootprimer/hello/src/main/resources
         $ keytool -keystore server.p12 -storepass 123456 -alias jj -deststoretype pkcs12 -genkeypair -keyalg RSA -validity 3650 -ext san=ip:www.example.com -keysize 2048
-
         What is your first and last name?
           [Unknown]:  Joe Bloggs
         What is the name of your organizational unit?
@@ -96,7 +96,7 @@ Then add the following entries to application.properties
         server.ssl.key-store-password=123456
         server.ssl.key-alias=tomcat
 
-10. Rebuild and restart
+10) Rebuild and restart
 
         $ ./mvnw clean package
         $ ./mvnw spring-boot:run
@@ -109,3 +109,7 @@ Both of:
         https://www.example.com:8080/greeting?name=Joe
 
 Should now work.
+
+# Useful References
+https://www.baeldung.com/spring-component-scanning
+

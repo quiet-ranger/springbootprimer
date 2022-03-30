@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@ComponentScan
+@ComponentScan // see https://www.baeldung.com/spring-component-scanning
 public class GreetingController {
     
     private static final String template = "Hello, %s!";
