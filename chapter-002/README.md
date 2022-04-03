@@ -26,7 +26,7 @@ was because the original did not mention versions and nothing worked.  I made al
 work with the specific versions I list above.  They may or may not work with different versions.
 
 # Steps
-1. Head to https://start.spring.io/ and make the following selections:
+1) Head to https://start.spring.io/ and make the following selections:
 
         Project Type: Maven
         Language: Java
@@ -39,23 +39,30 @@ work with the specific versions I list above.  They may or may not work with dif
         Java: 11
         Dependencies: Spring Web, Spring Data JPA, H2 Database
 
-2. Click on generate and save the file locally (will be named chapter-002.zip)
+2) Click on generate and save the file locally (will be named chapter-002.zip)
 
-3. Unzip to your project directory, say ~/springbootprimer
+3) Unzip to your project directory, say ~/springbootprimer
 
-4. Enter the IDE and import the project
+4) Enter the IDE and import the project
 
-5. Create the following additional classes which are not generated:
+5) Create the following additional classes which are not generated:
 
-+ __Employee__ class is the entity to be persisted, using the same approach as in chapter-001. It will be automatically converted to JSON on the response by the Jackson JSON library
-+ __EmployeeRepository__ is the magic glue that causes __Employee__ to be persisted
-+ __PayrollApplication__ is marked with @SpringBootApplication and it becomes the entrypoint for SpringBoot to introspect and wire up the application
-+ __LoadDatabase__ is a convenience class to pre-load some data to the database but it also demonstrates how initialisation tasks in general can be handled.  In a nutshell, Spring will execute every CommandLineRuner inside a @Bean once the application context is loaded
-+ __EmployeeController__ is the class that will directly handle HTTP requests just as in chapter-001
-+ __EmployeeNotFoundException__ is used to customise the error message we would like to emit under a specific scenario. It will be further wrapped a processed by __EmployeeNotFoundAdvice__
-+ __EmployeeNotFoundAdvice__ is responsible for converting a specific exception into an HTTP error code of our choice.  Note that it also gives us an opportunity to further process the message passed back
++ __Employee__  class is the entity to be persisted, using the same approach as in chapter-001. It will be automatically converted to JSON on the
+                response by the Jackson JSON library.  Notice how several JPA annotations are used to control aspects of the mapping to a RDBMS.
++ __EmployeeRepository__  is the magic glue that causes  __Employee__  to be persisted
++ __PayrollApplication__  is marked with @SpringBootApplication and it becomes the entrypoint for SpringBoot to introspect and wire up the 
+                application
++ __LoadDatabase__  is a convenience class to pre-load some data to the database but it also demonstrates how initialisation tasks in general 
+                can be handled.  In a nutshell, Spring will execute every CommandLineRuner inside a @Bean once the application context is loaded
++ __EmployeeController__  is the class that will directly handle HTTP requests just as in chapter-001
++ __EmployeeNotFoundException__  is used to customise the error message we would like to emit under a specific scenario. It will be further 
+                wrapped and processed by  __EmployeeNotFoundAdvice__
++ __EmployeeNotFoundAdvice__  is responsible for converting a specific exception into an HTTP error code of our choice.  Note that it also gives 
+                us an opportunity to further process the message passed back
 
-Contrary to what is instructed here https://spring.io/guides/gs/rest-service/, it is important that these new classes are created on the directory where the main SpringBootApplication, __PayrollApplication__, exists or a subdirectory of it.  If you don't do this, at runtime the controller cannot be found.
+Contrary to what is instructed here https://spring.io/guides/gs/rest-service/, it is important that these new classes are created on the 
+directory where the main SpringBootApplication,  __PayrollApplication__ , exists or a subdirectory of it.  If you don't do this, at runtime the 
+controller cannot be found. To gain more control over dependency injection you can read more [here](https://techyourwaytosuccess.wordpress.com/2017/08/13/springboot-dependecyinjection/)
 
 6. Open a terminal and run:
 
@@ -64,7 +71,7 @@ Contrary to what is instructed here https://spring.io/guides/gs/rest-service/, i
 
 7. Once the server is ready (you should see "Completed Initialization" on the console) you can try accessing from a browser:
 
-https://www.example.com:8080/employees
+https://www.example.com:8080/employees  
 https://www.example.com:8080/employees/2
 
         {
@@ -73,8 +80,20 @@ https://www.example.com:8080/employees/2
                 "role": "thief"
         }
 
-For more complex interactions, consider using [Insomnia](https://insomnia.rest/download).  If you use Insomnia, make sure you untick the checkbox "Validate Certificates" in Settings.
+For more complex interactions, consider using [Insomnia](https://insomnia.rest/download).  If you use Insomnia, make sure you untick the 
+checkbox "Validate Certificates" in Settings.
 
-The original tutorial does not consider these services RESTful because the responses do not include hyperlinks to interact further with the entities.  That might well be the case if you stick to a very strict definition. 
+The original tutorial does not consider these services RESTful because the responses do not include hyperlinks to interact further with 
+the entities.  That might well be the case if you stick to a very strict definition. 
 
-My personal opinion on this one is that implementing HATEOAS, see chapter-003, is an interesting and powerful technique but is is also incomplete.  Note how every link returned is for a specific action that neither has a body nor further query parameters.  Unless an incredibly small subset of such combinations can be specified upfront, there is no practical way we could construct endless lists of possible actions for an entity.
+My personal opinion on this one is that implementing HATEOAS, see chapter-003, is an interesting and powerful technique but is is also 
+incomplete.  Note how every link returned is for a specific action that neither has a body nor further query parameters.  Unless an 
+incredibly small subset of such combinations can be specified upfront, there is no practical way we could construct endless lists of 
+possible actions for an entity.
+
+
+# Useful References
+[JPA](https://www.javaguides.net/2020/10/defining-jpa-entity-entity-annotation.html)
+
+[Dependency Injection](https://techyourwaytosuccess.wordpress.com/2017/08/13/springboot-dependecyinjection)
+

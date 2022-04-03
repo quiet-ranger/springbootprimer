@@ -2,15 +2,25 @@ package com.example.payroll;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="student")
 class Employee {
 
-  private @Id @GeneratedValue Long id;
+  @Id 
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name="id")
+  private Long id;
+  
+  @Column(name="first_name", length=50, nullable=false, unique=false)
   private String name;
+  
   private String role;
 
   Employee() {}
